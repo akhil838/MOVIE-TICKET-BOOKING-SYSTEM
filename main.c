@@ -21,6 +21,26 @@
     //TRANSACTION FUNCTION
 #include "transaction/transaction.c"
 
+int s_cmp,login_user,result=0;
+int month,year,cvv=0;
+int now_show_a,now_show_b,up_a;
+int amount=0,transaction_a;
+int theater,movie_time,mode,booking;
+int adult,kid,couple,movie_a;
+int next_week_a,next_week_b,econfirm;
+int this_week_a,this_week_b,econfirm;
+int now_show_a,now_show_b,events_a;
+int i,x,num,t,i,n,a=0,snack,otp,sp,end,n1;
+int VIP,GA,teen;
+
+FILE * reset[48],*seat_fp,*moviefp,* screenfp,*ufp;
+struct users u;
+char usr_name[15];
+char usr_pass[10];
+char cardname,cardnum,str[10],ch;
+char selected_movie[40];
+char selected_theater[50];
+
 
 
 

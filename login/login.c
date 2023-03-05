@@ -6,15 +6,15 @@ struct users
    char location[20];
    char ph_num[11];
 };
-
+extern	FILE *ufp;
+extern struct users u;
+extern   int x,s_cmp,login_user,result;
+extern	char usr_name[15];
+extern   char usr_pass[10];
 // Driver program
 int login ()
 {
-	FILE *ufp;
-	struct users u;
-   int x,s_cmp,login_user,result=0;
-	char usr_name[15];
-   char usr_pass[10];
+   result = 0;
    start:
    ufp = fopen ("login/users.dat", "a+");
 

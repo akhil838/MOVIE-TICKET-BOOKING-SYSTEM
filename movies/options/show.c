@@ -4,6 +4,7 @@ struct movies{
     char movie_review[300];
 }mvie;
     int now_show_a,now_show_b;
+    extern char selected_movie[40];
 void now_showing(){
 
     char ch;
@@ -28,10 +29,10 @@ void now_showing(){
     printf("\n\n\t\t5.Go Back..\n");
     printf("\n\t\tChoose a movie:");
     scanf("%d",&now_show_a);    //  REVIEWS FOR THE MOVIE - FROM FILE
-        if(now_show_a == 1) {moviefp = fopen("movies/reviews/1.txt","r");}
-        else if(now_show_a == 2) {moviefp = fopen("movies/reviews/2.txt","r");}
-        else if(now_show_a == 3) {moviefp = fopen("movies/reviews/3.txt","r");}
-        else if(now_show_a == 4) {moviefp = fopen("movies/reviews/4.txt","r");}
+        if(now_show_a == 1) {strcpy(selected_movie,"WALTAIR VEERAYYA"); moviefp = fopen("movies/reviews/1.txt","r");}
+        else if(now_show_a == 2) {strcpy(selected_movie,"MICHAEL"); moviefp = fopen("movies/reviews/2.txt","r");}
+        else if(now_show_a == 3) {strcpy(selected_movie,"AVATAR: THE WAY OF WATER(Telugu)"); moviefp = fopen("movies/reviews/3.txt","r");}
+        else if(now_show_a == 4) {strcpy(selected_movie,"PATHAAN(Telugu)"); moviefp = fopen("movies/reviews/4.txt","r");}
         else if(now_show_a == 5) movie();
     printf("\n\t\t1.Book tickets\t\t2.Review\t\t3.Re-Select Movie\n");
     printf("\t\tEnter your option: ");

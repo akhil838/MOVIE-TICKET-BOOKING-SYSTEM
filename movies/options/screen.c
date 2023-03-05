@@ -4,18 +4,25 @@ struct seats{
     int seat_num;
 }s,booked,tmp[100];
     
-int now_show_a,now_show_b;
-int amount=0;
+extern int now_show_a,now_show_b;
+extern int amount;
 void reset_seats();
-FILE* screenfp;
+extern FILE* screenfp;
 
-FILE* r_seat_fp(int,int,int,int);
+extern FILE* r_seat_fp(int,int,int,int);
+extern int num,n1,rname,i,t,x,mode,booking;
+extern int n,a,theater,movie_time,snack;
+extern char ch;
+int num_ticket;
+extern char selected_theater[50];
+
+
 
 void screen(){
-    int num,n1,rname,i,t,x=0,mode,booking;
-    int n,a=0,theater,movie_time,u;
-    char ch;
+x =0;
+a =0;
 start:
+    num_ticket = 0;
     amount = 0;
     system("cls");
     title();
@@ -24,6 +31,10 @@ start:
     printf("\n\t\tChoose The Nearest Theater: "); 
 
     scanf("%d",&theater);
+    if(theater == 1) strcpy(selected_theater , "INOX GSM Mall,Madeenaguda");
+    if(theater == 2) strcpy(selected_theater , "INOX Maheshwari Parmeshwari Mall,Kachiguda"); 
+    if(theater == 3) strcpy(selected_theater , "INOX GVK One,Banjara Hills");
+    if(theater == 4) strcpy(selected_theater , "INOX Sattva Necklace Mall, Kavadiguda");
     if(theater == 5)
     now_showing();
     printf("\n\t\t\t\t<-      SHOW TIMINGS    ->\n");
@@ -62,6 +73,7 @@ x = 0;
             if(booked.seat_chr >='D' && booked.seat_chr <='F') amount+=370; 
             if(booked.seat_chr >='A' && booked.seat_chr <='C') amount+=250; 
             x =1;
+            num_ticket++;
             break;
         }
     }
@@ -97,25 +109,25 @@ printf("\n\t\t\t\tSNACKS TIME:");
  printf("\n\n\t\t10.NOTHING ELSE...!");
  printf("\n\n\t\tEnter your choices: ");
  do{
- scanf("%d",&u);
- if(u==1 || u==2)
+ scanf("%d",&snack);
+ if(snack==1 || snack==2)
     amount+=179;
- else if(u==3 || u == 6)
+ else if(snack==3 || snack == 6)
    amount+=199;
- else if(u==4)
+ else if(snack==4)
    amount+=359;
- else if(u==5)
+ else if(snack==5)
    amount+=149; 
- else if(u==7)
+ else if(snack==7)
    amount+=550; 
- else if(u==8)
+ else if(snack==8)
    amount+=520;   
- else if(u==9)
+ else if(snack==9)
    amount+=60;         
  else{
-   if(u!=10) 
+   if(snack!=10) 
    printf("Invalid option:");
-   }}while(u != 10);
+   }}while(snack != 10);
 
 sleep(1);
 
@@ -129,7 +141,7 @@ now_showing();
 printf("\t\tTotal Amount = %d",amount);
 printf("\t\tPROCESSING TRANSACTION PLEASE WAIT!!...");
 sleep(4);
-transaction();
+transaction(1);
 
 getch();
 }
