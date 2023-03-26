@@ -16,5 +16,8 @@ An Idealistic Movie Ticket Booking Simulator Using C Programming
 * #### Seat Booking ####    
 ![image](https://user-images.githubusercontent.com/64255484/227761025-2cb37ce2-1ef4-4c90-a5c2-cac76c9e55ba.png)
 
+* ### EVENTS ###
+* ### TRANSACTION ###
+* ### TICKET PRINTING ###
 
 
